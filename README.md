@@ -1,5 +1,7 @@
 # Serverless Rekognition Example
 
+![Celebrities](https://raw.githubusercontent.com/sean-hill/serverless-rekognition/master/celebrities.jpg)
+
 This repository provides a code sample of how to accept an image via `POST`
 request and process that image to see if any celebrities are contained within
 it.
@@ -15,3 +17,5 @@ parsed as an image.
 
 This was tested using `serverless-offline` as well as in AWS with Postman as
 seen below.
+
+![Postman](https://raw.githubusercontent.com/sean-hill/serverless-rekognition/master/postman.png)

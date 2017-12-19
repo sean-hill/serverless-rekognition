@@ -2,6 +2,13 @@ service: serverless-rekognition
 
 plugins:
   - serverless-offline
+  - serverless-plugin-custom-binary
+
+custom:
+  apigatewayBinary:
+    types:
+      - 'image/png'
+      - 'image/jpeg'
 
 provider:
   name: aws
@@ -18,5 +25,10 @@ functions:
   app:
     handler: index.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: 
+          path: /
+          method: GET
+      - http: 
+          path: /{proxy+}
+          method: ANY
+          contentHandling: CONVERT_TO_BINARY
